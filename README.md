@@ -8,7 +8,7 @@ https://unil.zoom.us/my/isaacpante
 
 Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisation de données](https://applicationspub.unil.ch/interpub/noauth/php/Ud/ficheCours.php?v_enstyid=53406&v_ueid=174&v_langue=37). Vous pouvez l'enrichir en envoyant un mail à [isaac.pante@unil.ch](mailto:isaac.pante@unil.ch?subject=Une nouvelle ressource en visualisation de données!) ou le partager avec [http://bit.ly/rvisdon](http://bit.ly/rvisdon).
 
-## Cours 1 : Présentation et visualisations frappantes.
+## Présentation et visualisations frappantes (23.02.21)
 
 Quelques visualisations qui vous ont frappées!
 
@@ -18,7 +18,7 @@ Quelques visualisations qui vous ont frappées!
 * [LightBeam](https://addons.mozilla.org/fr/firefox/addon/lightbeam-3-0/)
 * [UnWomen](https://www.unwomen.org/fr/digital-library/multimedia/2020/2/infographic-visualizing-the-data-womens-representation)
 
-## Cours 1 : Histoires et enjeux de la visualisation
+## Histoires et enjeux de la visualisation
 
 * [Espace moodle du cours](https://moodle.unil.ch/course/view.php?id=15507)
 * [Vents et marées](https://earth.nullschool.net/fr/)
@@ -27,7 +27,7 @@ Quelques visualisations qui vous ont frappées!
 * [Copinage dans les hautes sphères](https://pegasusdata.com/2012/11/25/opendata-copinage-au-gouvernement-quand-lanalyse-de-reseau-vient-en-aide-au-journalisme-dinvestigation/)
 * [Dear Data](http://www.dear-data.com/)
 
-## Cours 2 : JS & D3
+## JS & D3
 
 * [Codepen isaacpante, collection Visualisation de données](https://codepen.io/collection/DRzbgx/)
 * [Documentation API D3.js](https://github.com/d3/d3/blob/master/API.md)
