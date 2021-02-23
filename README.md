@@ -10,7 +10,7 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 ## Présentation et visualisations frappantes (23.02.21)
 
-Quelques visualisations qui vous ont frappées!
+Vos visualisations marquantes :
 
 * [A.I. Experiments: Visualizing High-Dimensional Space](https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers)
 * [Covid 19](https://ncase.me/covid-19/)
