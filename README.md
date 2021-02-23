@@ -8,6 +8,14 @@ https://unil.zoom.us/my/isaacpante
 
 Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisation de données](https://applicationspub.unil.ch/interpub/noauth/php/Ud/ficheCours.php?v_enstyid=53406&v_ueid=174&v_langue=37). Vous pouvez l'enrichir en envoyant un mail à [isaac.pante@unil.ch](mailto:isaac.pante@unil.ch?subject=Une nouvelle ressource en visualisation de données!) ou le partager avec [http://bit.ly/rvisdon](http://bit.ly/rvisdon).
 
+## Cours 1 : Présentation et visualisations frappantes.
+
+* [A.I. Experiments: Visualizing High-Dimensional Space](https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers)
+* [Covid 19](https://ncase.me/covid-19/)
+* [The True Sie](https://thetruesize.com)
+* [LightBeam](https://addons.mozilla.org/fr/firefox/addon/lightbeam-3-0/)
+* [UnWomen](https://www.unwomen.org/fr/digital-library/multimedia/2020/2/infographic-visualizing-the-data-womens-representation)
+
 ## Cours 1 : Histoires et enjeux de la visualisation
 
 * [Espace moodle du cours](https://moodle.unil.ch/course/view.php?id=15507)
