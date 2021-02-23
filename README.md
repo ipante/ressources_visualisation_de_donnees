@@ -10,6 +10,8 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 ## Cours 1 : Présentation et visualisations frappantes.
 
+Quelques visualisations qui vous ont frappées!
+
 * [A.I. Experiments: Visualizing High-Dimensional Space](https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers)
 * [Covid 19](https://ncase.me/covid-19/)
 * [The True Sie](https://thetruesize.com)
