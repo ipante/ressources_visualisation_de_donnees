@@ -2,21 +2,12 @@
 
 ![image](https://cdn-images-1.medium.com/max/1600/1*W8AnG2cqh-fmDt_-UqTPsA.png)
 
-## Lien Zoom du cours
-
-https://unil.zoom.us/my/isaacpante
-
 Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisation de données](https://applicationspub.unil.ch/interpub/noauth/php/Ud/ficheCours.php?v_enstyid=53406&v_ueid=174&v_langue=37). Vous pouvez l'enrichir en envoyant un mail à [isaac.pante@unil.ch](mailto:isaac.pante@unil.ch?subject=Une nouvelle ressource en visualisation de données!) ou le partager avec [http://bit.ly/rvisdon](http://bit.ly/rvisdon).
 
-## Présentation et visualisations frappantes (23.02.21)
+## Liens
 
-Vos visualisations marquantes :
-
-* [A.I. Experiments: Visualizing High-Dimensional Space](https://www.youtube.com/watch?v=wvsE8jm1GzE&ab_channel=GoogleDevelopers)
-* [Covid 19](https://ncase.me/covid-19/)
-* [The True Sie](https://thetruesize.com)
-* [LightBeam](https://addons.mozilla.org/fr/firefox/addon/lightbeam-3-0/)
-* [UnWomen](https://www.unwomen.org/fr/digital-library/multimedia/2020/2/infographic-visualizing-the-data-womens-representation)
+* [Lien Zoom du cours](https://unil.zoom.us/my/isaacpante)
+* :sparkle:[Plan et les vidéos du cours](https://share.mindmanager.com/#publish/zvPPE1mtKuFzkQ9MfBUY4dU6dHs92HS1G71kXrOp)
 
 ## Histoires et enjeux de la visualisation
 
