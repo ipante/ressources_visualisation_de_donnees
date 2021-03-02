@@ -7,7 +7,7 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 ## Liens
 
 * [Lien Zoom du cours](https://unil.zoom.us/my/isaacpante)
-* :sparkle:[Plan et les vidéos du cours](https://share.mindmanager.com/#publish/zvPPE1mtKuFzkQ9MfBUY4dU6dHs92HS1G71kXrOp)
+* :sparkle: [Plan et les vidéos du cours](https://share.mindmanager.com/#publish/zvPPE1mtKuFzkQ9MfBUY4dU6dHs92HS1G71kXrOp)
 
 ## Histoires et enjeux de la visualisation
 
