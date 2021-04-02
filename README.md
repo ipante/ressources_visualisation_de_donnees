@@ -96,8 +96,11 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 # Autres librairies
 
-* [Toasat UI](https://ui.toast.com/weekly-pick/en_20210126)
 * [Billboard.js](https://github.com/naver/billboard.js)
+* [Charts CSS](https://chartscss.org/)
+* [C3.js](https://c3js.org/)
+* [Plotly.js](https://plotly.com/javascript/)
+* [Toast UI](https://ui.toast.com/weekly-pick/en_20210126)
 
 # Réseaux
 
