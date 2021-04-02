@@ -48,11 +48,6 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 * Lancer un serveur local : [Extension live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 * Travailler à plusieurs sous VSCode : [Extension VS Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
 
-## Autres liens (en vrac)
-
-* [Carte des vents en pur WebGL](https://blog.mapbox.com/how-i-built-a-wind-map-with-webgl-b63022b5537f)
-* [Timeline Tree of Tabletop Role-Playing Games](https://github.com/pmartinolli/TTTTRPG)
-
 ## Ressources
 
 ## Exemples de visualisations
@@ -61,6 +56,8 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 * [Mapping a nuclear detonation](https://outrider.org/nuclear-weapons/interactive/bomb-blast/)
 * [100 ans de science-fiction](http://app.openmappr.org/play/100YrsOfSciFi)
 * [Exemple sur le GitHub UNIL de projets précédents](https://github.com/search?q=topic%3Ad3+org%3Aopenscienceunil+fork%3Atrue)
+* [Carte des vents en pur WebGL](https://blog.mapbox.com/how-i-built-a-wind-map-with-webgl-b63022b5537f)
+* [Timeline Tree of Tabletop Role-Playing Games](https://github.com/pmartinolli/TTTTRPG)
 
 ## Comptes Twitter
 
