@@ -21,6 +21,7 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 ## JS & D3
 
+* [Guide de migration vers D3 V6](https://observablehq.com/@d3/d3v6-migration-guide#collection)
 * [Codepen isaacpante, collection Visualisation de données](https://codepen.io/collection/DRzbgx/)
 * [Documentation API D3.js](https://github.com/d3/d3/blob/master/API.md)
 * [Exemples en D3.js](https://bl.ocks.org/mbostock)
