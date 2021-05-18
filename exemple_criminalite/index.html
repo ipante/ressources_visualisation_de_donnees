@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js' integrity='sha512-cd6CHE+XWDQ33ElJqsi0MdNte3S+bQY819f7p3NUHgwQQLXSKjE4cPZTeGNI+vaxZynk1wVU3hoHmow3m089wA==' crossorigin='anonymous'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.5/d3.min.js' integrity='sha512-z7KI7lTB/lB7jwx1VPVxbyF5LPLONBrshyS4tUJBlpxJ5HuNv+d6RrBfFDVJHe1aMd2D5/rMYXMPGKMhidIoVg==' crossorigin='anonymous'></script> -->
+    <script>
+        // V5
+        // d3.csv('data.csv').then(data => {
+        //     var nouveau = d3.nest()
+        //         .key(d => d.Offence)
+        //         .key(d => d.Canton)
+        //         .entries(data);
+        //     console.log("nouveau",nouveau);
+        // })
+
+        // V6 maps
+        // d3.csv('data.csv').then(data => {
+        //     // avec des maps
+        //     var nouveau = d3.group(data, d => d.Offence, d => d.Canton);
+        //     console.log("nouveau",nouveau.get("Unauthorised obtaining of data (Art. 143)").get("Uri"));
+        // })
+
+        // V6 tableaux
+        // d3.csv('data.csv').then(data => {
+        //     var nouveau = d3.groups(data, d => d.Offence, d => d.Canton);
+        //     // tableaux à deux dimensions
+        //     console.log("nouveau",nouveau);
+        // })
+
+
+        d3.csv('data.csv').then(data => {
+            // trier
+            const n2 = d3.rollups(data, v => d3.sum(v, d => d['2009']), d => d.Offence);
+            console.log(n2);
+        })
+        
+    </script>
+</body>
+</html>
