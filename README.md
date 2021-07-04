@@ -60,6 +60,7 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 * [Carte des vents en pur WebGL](https://blog.mapbox.com/how-i-built-a-wind-map-with-webgl-b63022b5537f)
 * [Timeline Tree of Tabletop Role-Playing Games](https://github.com/pmartinolli/TTTTRPG)
 * [Si par une nuit d'hiver un voyageur](https://www.behance.net/gallery/83315693/Italo-Calvino-text-data-data-visualization-book)
+* [Exemples de visualisation de Calvino](https://atlantecalvino.unige.ch/doubt/phase2?lang=it)
 
 ## Comptes Twitter
 
