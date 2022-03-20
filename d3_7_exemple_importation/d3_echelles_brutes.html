@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+        // SEANCE SUR LES ECHELLES
+
+        // données théoriques
+        let donnees = [3,14,150,3,2400];
+
+        // échelle pour la taille de l'écran
+        let echelleX = d3.scaleLinear()
+            .domain(d3.extent(donnees))
+            .range([0,window.innerWidth])
+        let echelleY = d3.scaleLinear()
+            .domain(d3.extent(donnees))
+            .range([window.innerHeight,0])
+        console.log("echelleX(3)",echelleX(3));
+        console.log("echelleY(3)",echelleY(3));
+
+        // échelle de couleurs : 2 valeurs explicites
+        let echelle2Couleurs = d3.scaleLinear()
+            .domain(d3.extent(donnees))
+            .range(['blue','red'])
+        console.log("echelle2Couleurs(3)",echelle2Couleurs(3));
+
+        // échelle de couleurs : valeurs prédéfinies
+        let echelleCouleurInterpolation = d3.scaleSequential()
+            .domain(d3.extent(donnees))
+            .interpolator(d3.interpolateRainbow)
+        console.log("echelleCouleurInterpolation(3)",echelleCouleurInterpolation(3));        
+        console.log("d3.min(donnees)",d3.mean(donnees));
+
+        // échelle de couleurs : 3 valeurs
+        let echelle3Couleurs = d3.scaleLinear()
+            .domain([d3.min(donnees),d3.mean(donnees),d3.max(donnees)])
+            .range(['blue','#ddd','red'])
+        console.log("echelle3Couleurs(3)",echelle3Couleurs(2400));
+
+        // fine tune et améliorations
+        // raccourcis
+        let echelle = d3.scaleLinear([0,100],["blue","red"]);
+        // limiter au range
+        echelle.clamp(true);
+        // fine tune
+        echelle.nice();
+
+        // récupérer une valeur avec invert()
+        // ajoutons un canevas
+        let canevas = d3.select('body')
+            .append('svg')
+                .attr('width',window.innerWidth)
+                .attr('height',window.innerHeight)
+                // rendons cette zone cliquable
+                .on('click',recupererPosition)
+
+        function recupererPosition(evenement){
+            let pos = d3.pointer(evenement)
+            console.log("Valeurs brutes [x,y] : ",pos);
+            // récupérer la coordonnée X rapportée à l'échelle
+            let valeurXALEchelle = echelleX.invert(pos[0]);
+            console.log("Valeur X à l'échelle :",valeurXALEchelle);
+        }
+        
+        // source : https://www.d3indepth.com/scales/
+    </script>
+</body>
+</html>

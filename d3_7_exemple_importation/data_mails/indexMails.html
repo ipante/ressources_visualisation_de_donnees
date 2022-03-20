@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.3.0/dist/d3.min.js"></script>
+    <script>
+        d3.csv("dataFullMailsEmotion.csv",function(d){
+            return{
+                date : +d.jour, // changé le nom + converti en nombre
+                emotion : d.emotion,
+                poids : d.poids *100,
+                dob : +d.jour + d.poids * 2.5
+            }
+        }).then(donnees =>{
+            // cet espace contient nos données
+            // 1. vérifier que les données ont bien été importées
+            console.log("Mes données CSV complètes :",donnees);
+            // 2. compter les données valides avec d3.count
+            let donneesPoidsValides = d3.count(donnees,d => d.poids)
+            console.log("Données poids valides : ",donneesPoidsValides)
+            // 3. calculer le poids maximal dans l'entier de mes données
+            let poidsMaximal = d3.max(donnees,d => d.poids)
+            console.log("Poids maximal : ",poidsMaximal)
+            // 4. calculer l'empan des données de poids
+            let empanPoids = d3.extent(donnees, d => d.poids)
+            console.log("Empan poids : ", empanPoids)
+            // 5. calculer le poids moyen
+            let poidsMoyen = d3.mean(donnees, d => d.poids)
+            console.log("poids moyen : ",poidsMoyen)
+            // 6. calculer le poids médian
+            let poidsMedian = d3.median(donnees, d => d.poids)
+            console.log("poids médian : ",poidsMedian)
+            // 7. calculer l'écart-type
+            let ecartType = d3.deviation(donnees, d => d.poids)
+            console.log("Ecart-type de poids",ecartType)
+            // 8. calculer la moyenne uniquement pour l'anxiete
+            let moyenneAnxieux = d3.mean(donnees.filter(d => d.emotion == "plaisir"), d => d.poids)
+            console.log("Moyenne des poids des mails anxieux : ", moyenneAnxieux)
+        })
+    </script>
+</body>
+</html>

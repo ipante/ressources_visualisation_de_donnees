@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance VD2 : Encodage et conversion</title>
+</head>
+<body>
+    <!-- source de données : https://docs.google.com/spreadsheets/d/1Ts0rPji-fJonurcr4Kr9t64blzmVeG_mzs4XMAjzzQU/edit?usp=sharing-->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+        // 0 : encoder les données en CSV (Google Docs)
+        // 1 : créer une page HTML+D3 pour notre code
+        // 2 : importer les données
+        d3.csv("dataFullMails.csv").then(data => {
+            // espace d'action
+            console.log(data[0]);
+        });
+
+        // 3 : recoder les types, en retenir, les convertir
+        d3.csv("dataFullMails.csv",function(d){
+            return{
+                date : +d.jour, // renommer
+                anxiete : +d.anxiété,
+                plaisir : +d.plaisir,
+                ennui : +d.ennui,
+                // vide retiré
+            }
+        }).then(data => {
+            // vérifier la bonne récupération des données
+            console.log(data[0]);
+
+            // 4 : indicateurs globaux
+            let moyenneNeg = d3.mean(data,d => d.anxiete + d.ennui); // ES6
+            let moyennePos = d3.mean(data,function(d){return d.plaisir}); // avant ES6
+            console.log("moyenneMinNeg,moyenneMinPos",moyenneNeg,moyennePos); 
+            // d3.mean,d3.deviation,d3.extent
+
+            // 5 : itérer et réduire
+            // calculer la somme de l'anxiete
+            console.log("data",data);
+            let sommeAnxiete = data.reduce((accumulateur,valeur,index)=>{
+                console.log("valeur",valeur.anxiete);
+                return accumulateur += valeur.anxiete
+            },0)
+            console.log("sommeAnxiete",sommeAnxiete);
+
+            // 6 : grouper les données (plusieurs)
+            let parJour = d3.group(data, d => d.date);
+            console.log("parJour",parJour);
+
+            // 7 : grouper les données (plusieurs)
+            // let dr = d3.rollup(data, v => v.length, d => d.date)
+            // console.log(dr)
+            groupeJour = d3.group(data, d => d.date);
+            console.log(groupeJour.get(14))
+
+            // 8 : résumer les données avec rollup
+            // d3.rollup(donnes,operation de réduction,propriete)
+            // nombre de valeurs différentes pour la variabble anxiété
+            let b = d3.rollup(data, v => v.length,d => d.anxiete);
+            console.log("b",b);
+            // obtenir la somme brute de l'anxiété par jour
+            let c = d3.rollup(data, v => d3.sum(v, d => d.anxiete), d => d.date);
+            console.log("Somme par jour",c);
+            
+            /* informations complémentaires
+                learnJS Data, prudence ! : https://observablehq.com/@berkeleyvis/reading-in-data-learn-js-data?collection=@berkeleyvis/learn-js-data
+                group : https://observablehq.com/@d3/d3-group
+                conversion de tables : https://tableconvert.com/markdown-to-markdown
+            */
+        });
+    </script>
+</body>
+</html>

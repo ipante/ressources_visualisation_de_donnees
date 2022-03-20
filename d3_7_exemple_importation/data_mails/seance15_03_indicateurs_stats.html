@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance 5 : Encodage et indicateurs</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+        // 0 : encoder les données en CSV (Google Docs)
+        // 1 : créer une page HTML+D3 pour notre code
+        // 2 : importer les données
+        // 3 : recoder les types, en retenir, les convertir
+        d3.csv("dataFullMailsEmotion.csv",function(d){
+            return{
+                date : +d.jour, // renommer & changer de type
+                emotion : d.emotion,
+                poids : +d.poids * 50 // multiplier et transformer
+            }
+        }).then(data => {
+            // ENSEMBLE DES DONNEES
+            // 4 : vérifier la bonne récupération des données
+            console.log(data);
+            // 5 : compter le nombre de poids valides
+            let poidsValides = d3.count(data,d => d.poids);
+            console.log("poids valides",poidsValides);
+            // 6 : calculer le poids maximal
+            let maxPoids = d3.max(data,d => d.poids);
+            console.log("poids maximal",maxPoids);
+            // 7 : calculer l'empan des poids
+            let empanPoids = d3.extent(data,d => d.poids);
+            console.log("empan poids",empanPoids);
+            // 8 : calculer le poids médian
+            let medianePoids = d3.median(data,d => d.poids);
+            console.log("médiane des poids",medianePoids);
+            // 9 : calculer l'écart-type poids
+            let ecartTypePoids = d3.deviation(data,d => d.poids);
+            console.log("écart-type des poids",ecartTypePoids);
+
+            // DONNEES PARTIELLES : UTILISATION DE FILTER
+            // 10 : statistiques que pour l'anxiete
+            let moyenneAnxiete = d3.mean(data.filter(d => d.emotion == "anxiete"), d => d.poids);
+            console.log("moyenneAnxiete",moyenneAnxiete);
+           
+            // REGROUPER LES DONNEES
+            // 11 : grouper les données par émotion
+            let parEmotion = d3.group(data, d => d.emotion);
+            console.log("groupe par émotion",parEmotion);
+            // 12 : grouper les données par émotion et date
+            let parEmotionEtDate = d3.group(data, d => d.emotion, d => d.date);
+            console.log("groupe par émotion et date",parEmotionEtDate);
+
+            // REDUIRE LES DONNEES
+            // 13 : résumer les données avec rollup
+            // d3.rollup(donnes,operation de réduction,propriete)
+            // nombre de valeurs différentes pour la variabble anxiété
+
+            // 14 : compter pour chaque variable et chaque emotion et par date
+            let comptageParEmotionEtDate = d3.rollup(data, v => v.length,d => d.emotion, d => d.date);
+            console.log("rollup",comptageParEmotionEtDate);
+            // 15 : mediane des poids par emotion
+            let medianePoidsParEmotion = d3.rollup(data, v => d3.median(v, d => d.poids), d => d.emotion);
+            console.log("Médiane par emotion",medianePoidsParEmotion);
+            
+            // 16 Extraire vers des tableaux avec groups et rollups
+            /* informations complémentaires
+                learnJS Data, prudence ! : https://observablehq.com/@berkeleyvis/reading-in-data-learn-js-data?collection=@berkeleyvis/learn-js-data
+                group : https://observablehq.com/@d3/d3-group
+                conversion de tables : https://tableconvert.com/markdown-to-markdown
+
+
+                d3.count : https://observablehq.com/@d3/d3-count
+                d3.mean median & friends : https://observablehq.com/@d3/d3-mean-d3-median-and-friends
+            */
+        });
+    </script>
+</body>
+</html>

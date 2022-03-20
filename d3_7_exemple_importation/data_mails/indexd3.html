@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encodage et conversion</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.4"></script>
+    <script>
+        // 0 : encoder les données en CSV
+        // 1 : créer une page HTML+D3 pour notre code
+        // 2 : importer les données
+        d3.csv("dataMailSum.csv").then(data => {
+            // espace d'action
+            console.log(data[0]);
+        });
+        // 3 : recoder les types, en retenir, les convertir
+        d3.csv("dataMailSum.csv",function(d){
+            return{
+                date : +d.jour,
+                anxiete : +d.anxiété,
+                plaisir : +d.plaisir,
+                ennui : +d.ennui,
+            }
+        }).then(data => {
+            console.log(data[0]);
+            // 4 : indicateurs globaux
+            let moyenneNeg = d3.mean(data,d => d.anxiete + d.ennui); // ES6
+            let moyennePos = d3.mean(data,function(d){return d.plaisir}); // avant ES6
+            console.log("moyenneMinNeg,moyenneMinPos",moyenneNeg,moyennePos); 
+            // d3.mean,d3.deviation,d3.extent
+            // 5 : itérer et réduire
+            // calculer la somme
+            let somme = data.reduce((accumulateur,valeur,index)=>{
+                accumulateur += valeur
+            },0)
+            // 6 : grouper les données (plusieurs)
+            let parJour = d3.group(data, d => d.date);
+            console.log("parJour",parJour);
+            // 7 : grouper les données (plusieurs)
+            // let dr = d3.rollup(data, v => v.length, d => d.date)
+            // console.log(dr)
+            groupeJour = d3.group(data, d => d.jour);
+            console.log("groupeJour(14)",groupeJour(14));
+            // 8 : rollup : https://observablehq.com/@d3/d3-group
+        });
+    </script>
+</body>
+</html>

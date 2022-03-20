@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance VD3 : Utilisation de Plot Sans transformation</title>
+</head>
+<body>
+    <!-- source de données : https://docs.google.com/spreadsheets/d/1Ts0rPji-fJonurcr4Kr9t64blzmVeG_mzs4XMAjzzQU/edit?usp=sharing-->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.4"></script>
+    <script>
+        let data = [[14,'anxiete'],[14,'ennui'],[14,'vide'],[14,'vide'],[14,'plaisir'],[14,'ennui'],[14,'plaisir'],[14,'plaisir'],[14,'anxiete'],[14,'anxiete'],[15,'ennui'],[15,'plaisir'],[15,'anxiete'],[15,'anxiete'],[15,'plaisir'],[15,'vide'],[15,'ennui'],[15,'vide'],[15,'vide'],[15,'plaisir'],[15,'anxiete'],[15,'plaisir'],[15,'plaisir'],[15,'ennui'],[15,'plaisir'],[15,'vide'],[15,'vide'],[15,'ennui'],[15,'ennui'],[15,'anxiete'],[15,'plaisir'],[16,'ennui'],[16,'plaisir'],[17,'plaisir'],[17,'plaisir'],[17,'ennui'],[17,'ennui'],[17,'anxiete'],[17,'vide'],[17,'plaisir'],[17,'plaisir'],[17,'anxiete'],[17,'ennui'],[17,'ennui'],[17,'ennui'],[17,'ennui'],[17,'ennui'],[17,'anxiete'],[17,'anxiete'],[17,'vide'],[17,'vide'],[17,'vide'],[17,'vide'],[17,'ennui'],[17,'ennui'],[17,'plaisir'],[17,'plaisir'],[17,'ennui'],[17,'ennui'],[17,'plaisir'],[17,'plaisir'],[17,'vide'],[17,'vide'],[17,'plaisir'],[17,'vide'],[18,'ennui'],[18,'ennui'],[18,'vide'],[18,'vide'],[18,'vide'],[18,'plaisir'],[18,'anxiete'],[18,'anxiete'],[18,'plaisir'],[18,'plaisir'],[18,'vide'],[18,'vide'],[18,'ennui'],[18,'anxiete'],[18,'anxiete'],[18,'plaisir'],[18,'vide'],[19,'vide'],[19,'plaisir'],[20,'ennui'],[20,'ennui'],[20,'ennui'],[21,'vide'],[21,'vide'],[21,'ennui'],[21,'ennui'],[21,'anxiete'],[21,'anxiete'],[21,'vide'],[21,'ennui'],[21,'ennui'],[21,'plaisir'],[21,'plaisir'],[21,'vide'],[21,'vide'],[21,'ennui'],[21,'anxiete'],[21,'anxiete'],[21,'vide'],[21,'vide'],[21,'ennui'],[21,'ennui'],[21,'ennui'],[21,'ennui'],[21,'plaisir'],[21,'plaisir'],[21,'plaisir'],[21,'plaisir'],[21,'anxiete'],[21,'vide']];
+        document.body.appendChild(Plot.lineY(data).plot())
+    </script>
+</body>
+</html>

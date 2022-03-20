@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance VD3 : Utilisation de Plot avec transformation</title>
+</head>
+<body>
+    <!-- source de données : https://docs.google.com/spreadsheets/d/1Ts0rPji-fJonurcr4Kr9t64blzmVeG_mzs4XMAjzzQU/edit?usp=sharing-->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.4"></script>
+    <script>
+        d3.csv("dataFullMailsEmotion.csv" ).then(data => {
+            console.log("data",data);
+            document.body.appendChild(Plot.plot({
+                    y : {type : "utc"},
+                    marks: [
+                        Plot.barY(data, { 
+                            x: "emotion",
+                            y: "jour",
+                        })
+                    ]
+                    })
+            );
+        });
+    </script>
+</body>
+</html>
