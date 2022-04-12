@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echelles</title>
+    <style>
+        svg {
+            margin: 0 auto;
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+        // 1. comprendre le problème général des échelles
+            // mapping
+            // différents types d'échelles
+            // ici, focus sur valeurs continues
+
+        // 2. construire une échelle
+        const exempleEchelle = d3.scaleLinear()
+            .domain([0,30])
+            .range([-5,5])
+
+        // tester cette échelle
+        // fonctionne aussi avec des couleurs
+        const exempleEchelleCouleur = d3.scaleLinear()
+            .domain([0,30])
+            .range(['blue','red'])
+
+        // utiliser des valeurs multiples pour range
+        const echelleCouleurs = d3.scaleLinear()
+            .domain([0,100])
+            .range(['yellow','green','red','blue'])
+
+            console.log("echelleCouleurs(24)",echelleCouleurs(24));
+            console.log("echelleCouleurs(26)",echelleCouleurs(26));
+
+        // 3. noter que, pour ce genre de cas, on peut faire appel à 
+            // des scheme prédéfinis
+            console.log("d3.schemeCategory10[0]",d3.schemeCategory10[0]);
+            // des interpolateurs
+
+        // 4. l'utilisation de clamp
+        const echelleClampee = d3.scaleLinear()
+            .domain([0,100])
+            .range([-5,5])
+
+        console.log("echelleClampee(200) sans clamp",echelleClampee(200));
+
+        echelleClampee.clamp(true)
+        console.log("echelleClampee(200) avec clamp",echelleClampee(200));
+
+        // 5. le lien avec des données vives d3.extent
+        // 6. le shorthand [][]
+        
+        // 7. aller dans l'autre sens avec invert
+
+        // créer un canevas
+        let canevas = d3.select('body')
+            .append('svg')
+            .attr('width', window.innerWidth - 30)
+            .attr('height', window.innerHeight - 30)
+
+        // définir une échelle
+        let echelleInvert = d3.scaleLinear()
+            .domain([-10, 10])
+            .range([0, window.innerWidth])
+            .nice();
+        
+        // ajouter un comportement à click à canevas
+        canevas.on('click',cliquer)
+
+        // définir une fonction qui inverse la valeur
+        function cliquer(e) {
+            let position = d3.pointer(e, canevas);
+            let positionX = position[0];
+            alert(echelleInvert.invert(positionX));
+        }
+
+        // 8. Ajouter un axe
+
+        // générer des données avec range
+        const donnees = d3.range(0, 100, 2)
+
+        // générer les valeurs des ticks
+        // start, stop, progression
+        console.log(d3.ticks(d3.min(donnees),d3.max(donnees),5))
+
+        // créer une échelle
+        const monEchelle = d3.scaleLinear()
+            .domain(d3.extent(donnees))
+            .range([0,window.innerWidth - 100])
+
+        // créer un axe
+        const monAxe = d3.axisBottom(monEchelle).ticks(50)
+
+        // ajouter cet axe
+        canevas.append("g")
+            .attr("transform","translate(20,100)")
+            .call(monAxe);
+
+        // 9. créer une légende
+
+        // définir nos données
+        let donneesCat = ['voiture','pied','metro','bus','train']
+        
+        // ajouter des bulles
+        canevas.append("g").selectAll('circle')
+            .data(donneesCat)
+            .enter()
+            .append('circle')
+                .attr('cx',50)
+                .attr('cy',(d,i) => 50+ i*25)
+                .attr('r',10)
+                .attr('fill', (d,i) => d3.schemeCategory10[i])
+
+        // ajouter des textes
+        canevas.append("g").selectAll('text')
+            .data(donneesCat)
+            .enter()
+            .append('text')   
+            .attr('x',70)
+                .attr('y',(d,i) => 50+ i*25)
+                .attr('r',10)
+                .text(d => d)
+                .attr('fill', (d,i) => d3.schemeCategory10[i])        
+
+        // 10 : mobiliser ces éléments dans l'exemple des transports        
+
+        /* ressources utiles
+            - les couleurs en d3 : https://observablehq.com/@d3/working-with-color
+            - type d'échelles de couleurs : https://observablehq.com/@d3/color-schemes?collection=@d3/d3-scale-chromatic
+            - scale ticks : https://observablehq.com/@d3/scale-ticks?collection=@d3/d3-scale
+            - article général : https://www.d3indepth.com/scales/
+        */
+    </script>
+</body>
+
+</html>
