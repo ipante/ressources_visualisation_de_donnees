@@ -6,13 +6,10 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 ## Liens
 
-* [Lien Zoom du cours](https://unil.zoom.us/my/isaacpante)
 * :sparkle: [Plan et vidéos du cours](https://share.mindmanager.com/#publish/brNo4nc7uuLr5-BYKZKeee8jSSo_dRLfwLPuoli2)
-* [Lien Discord du cours](https://discord.gg/YDEDKSHJY5)
 
 ## Histoires et enjeux de la visualisation
 
-* [Espace moodle du cours](https://moodle.unil.ch/course/view.php?id=15507)
 * [Vents et marées](https://earth.nullschool.net/fr/)
 * [The linked data cloud](https://lod-cloud.net/)
 * [Ceux qui ne sont jamais arrivés](https://visionscarto.net/ceux-qui-ne-sont-jamais-arrives)
@@ -38,6 +35,7 @@ Cet annuaire de ressources est destiné aux étudiant·e·s du cours [Visualisat
 
 ## Jeux de données
 
+* [Les principes du Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf)
 * [Liste d'API ouvertes](https://github.com/toddmotto/public-apis/blob/master/README.md)
 * [OpenDataSoft](https://data.opendatasoft.com/pages/home/)
 * [OpendDataSwiss](https://opendata.swiss/fr)
